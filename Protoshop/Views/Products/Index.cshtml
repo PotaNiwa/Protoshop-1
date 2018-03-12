@@ -6,7 +6,7 @@
 
 <h2>Produkter</h2>
 
-@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+@if (Request.IsAuthenticated && User.IsInRole("User") || User.IsInRole("Admin"))
 {
     <p>
         @Html.ActionLink("Create New", "Create")
