@@ -4,6 +4,13 @@
     ViewBag.Title = "Index";
 }
 
+@using(Html.BeginForm("index", "Products", FormMethod.Get))
+{
+    <label for="search">Sök:  </label>
+    <input type="text" id="search" name="search" placeholder="Sök..."/>
+    <input type="submit" value="Sök"/>
+}
+
 <h2>Produkter</h2>
 
 @if (Request.IsAuthenticated && User.IsInRole("User") || User.IsInRole("Admin"))
