@@ -20,9 +20,11 @@
     </p>
 }
 
+
 <div class="products">
     @foreach (var item in Model)
     {
+       
         <a href="@Url.Action("Details", "Products", new { id = item.ID})" class="product">
             <img src="@Url.Content("~/Content/Images/logang.jpg")" alt="logan" />
             <h3>@item.Name</h3>
