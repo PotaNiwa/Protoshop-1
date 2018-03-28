@@ -16,7 +16,7 @@
 @if (Request.IsAuthenticated && User.IsInRole("User") || User.IsInRole("Admin"))
 {
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create") nobba
     </p>
 }
 
@@ -26,7 +26,7 @@
     {
        
         <a href="@Url.Action("Details", "Products", new { id = item.ID})" class="product">
-            <img src="@Url.Content("~/Content/Images/logang.jpg")" alt="logan" />
+            <img src="@Url.Content("~/Content/Images/" +  item.ImageFile)" alt="logan" />
             <h3>@item.Name</h3>
             <p>@item.Price</p>
             <p>@item.Description</p>

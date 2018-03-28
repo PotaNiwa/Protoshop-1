@@ -16,6 +16,7 @@ namespace Protoshop.Controllers
         private StoreContext db = new StoreContext();
 
         // GET: Products
+        [AllowAnonymous]
         public ActionResult Index(string search)
         {
             var products = db.Products.Include(p => p.Category);
@@ -27,6 +28,7 @@ namespace Protoshop.Controllers
         }
 
         // GET: Products/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -42,6 +44,7 @@ namespace Protoshop.Controllers
         }
 
         // GET: Products/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name");
@@ -70,6 +73,7 @@ namespace Protoshop.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
