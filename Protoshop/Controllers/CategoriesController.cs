@@ -14,7 +14,9 @@ namespace Protoshop.Controllers
     {
         private StoreContext db = new StoreContext();
 
+
         // GET: Categories
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Categories.ToList());
@@ -35,6 +37,7 @@ namespace Protoshop.Controllers
             return View(category);
         }
 
+        [Authorize]
         // GET: Categories/Create
         public ActionResult Create()
         {
@@ -59,6 +62,7 @@ namespace Protoshop.Controllers
         }
 
         // GET: Categories/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +94,7 @@ namespace Protoshop.Controllers
         }
 
         // GET: Categories/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

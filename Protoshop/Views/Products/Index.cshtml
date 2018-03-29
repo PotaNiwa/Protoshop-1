@@ -13,10 +13,10 @@
 
 <h2>Produkter</h2>
 
-@if (Request.IsAuthenticated && User.IsInRole("User") || User.IsInRole("Admin"))
+@if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("Customer"))
 {
     <p>
-        @Html.ActionLink("Create New", "Create") nobba
+       <span class="btn btn-default"> @Html.ActionLink("Create New", "Create")</span>
     </p>
 }
 

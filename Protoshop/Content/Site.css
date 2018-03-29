@@ -1,5 +1,4 @@
 ﻿body {
-
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -32,24 +31,95 @@ textarea {
 
 .product {
     grid-column: span 1;
+    grid-row: span 1;
     border: 1px solid #eeeeee;
     padding: 10px;
     color: black;
     text-decoration: none;
 }
 
-.product:hover {
-    background-color: #eeeeee;
-    color: black;
-    text-decoration: none;
+    .product:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+        border: 1px solid #eeeeee;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .product:hover {
+        background-color: #eeeeee;
+        color: black;
+        text-decoration: none;
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+
+.searchbar {
+    display: inline;
+    margin: 10px;
+    grid-column: span 4;
 }
 
-.product img {
-    width: 100%;
-    height: auto;
-}
+@media only screen and (max-width: 450px) {
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
 
-.product:first-child{
-    grid-column: span 2;
-    grid-row: span 2;
+    /* Set padding to keep content from hitting the edges */
+    .body-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+    .dl-horizontal dt {
+        white-space: normal;
+    }
+
+    /* Set width on the form input elements since they're 100% wide by default */
+    input,
+    select,
+    textarea {
+        max-width: 280px;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 12px;
+    }
+
+    .product {
+        grid-column: span 1;
+        border: 1px solid #eeeeee;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+    }
+
+        .product:first-child {
+            grid-column: span 2;
+            border: 1px solid #eeeeee;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .product:hover {
+            background-color: #eeeeee;
+            color: black;
+            text-decoration: none;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
 }
