@@ -6,9 +6,8 @@
 
 @using(Html.BeginForm("index", "Products", FormMethod.Get))
 {
-    <label for="search">Sök:  </label>
-    <input type="text" id="search" name="search" placeholder="Sök..."/>
-    <input type="submit" value="Sök"/>
+    <input type="text" id="search" name="search" placeholder="Sök..." class="form-control"/>
+    <input type="submit" value="Sök" class="hidden"/>
 }
 
 <h2>Produkter</h2>
@@ -21,16 +20,20 @@
 }
 
 
-<div class="products">
-    @foreach (var item in Model)
+    <div class="products">
+        @foreach (var item in Model)
     {
-       
-        <a href="@Url.Action("Details", "Products", new { id = item.ID})" class="product">
-            <img src="@Url.Content("~/Content/Images/" +  item.ImageFile)" alt="logan" />
-            <h3>@item.Name</h3>
-            <p>@item.Price</p>
-            <p>@item.Description</p>
-            <p><span class="btn btn-success">DO IT</span></p>
+
+        <a href="@Url.Action("Details", "Products", new { id = item.ID })" class="product">
+            <img src="@Url.Content("~/Content/Images/" + item.ImageFile)" alt="bild" />
+            <h2>@item.Name</h2>
+            <p>
+                <span class="price">@item.Price kr</span>
+                <span class="btn btn-success buy">
+                <span class="glyphicon glyphicon-shopping-cart"></span> Köp
+                </span>
+            </p>
+            <p class="desc">@item.Description</p>
         </a>
-    }
-</div>
+}
+    </div>

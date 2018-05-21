@@ -64,7 +64,7 @@ textarea {
     grid-column: span 4;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 720px) {
     body {
         padding-top: 50px;
         padding-bottom: 20px;
@@ -92,7 +92,7 @@ textarea {
 
     .products {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 1fr;
         grid-gap: 12px;
     }
 
